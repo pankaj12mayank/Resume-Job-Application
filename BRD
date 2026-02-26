@@ -1,0 +1,131 @@
+BUSINESS REQUIREMENT DOCUMENT (BRD)
+
+1️⃣ Executive Summary
+The Resume & Job Application Auto-Bot is a Python-based automation system designed to help job seekers:
+Analyze job descriptions
+Match resume with job requirements
+Customize resume summary
+Generate tailored cover letters
+Apply automatically on selected platforms
+Track applications centrally
+Target platforms include:
+LinkedIn
+Naukri.com
+Foundit
+Indeed
+
+2️⃣ Business Objectives
+Objective
+Description
+Automation
+Reduce manual job application effort by 70%
+Customization
+Improve ATS score through tailored resumes
+Efficiency
+Apply to multiple jobs within minutes
+Tracking
+Centralized monitoring of job applications
+Monetization
+Offer SaaS-based subscription model
+
+
+3️⃣ Problem Statement
+Job seekers:
+Manually customize resumes for each job
+Spend hours applying individually
+Lack tracking mechanism
+Do not know resume match percentage
+This leads to:
+Low response rate
+High manual effort
+Poor optimization
+
+4️⃣ Scope
+✅ In Scope
+Resume parsing (.docx)
+Job description analysis
+Keyword extraction
+Match percentage calculation
+Resume summary customization
+Cover letter generation
+Excel-based tracking
+Basic web interface
+Optional Selenium-based auto apply
+❌ Out of Scope (Phase 1)
+Full ATS integration
+Captcha bypass
+Mobile application
+Multi-user enterprise dashboard
+
+5️⃣ Stakeholders
+Stakeholder
+Role
+Product Owner
+Defines features & roadmap
+Developer
+Builds Python modules
+End User
+Job seeker
+Admin (Future SaaS)
+Manage subscriptions
+
+
+6️⃣ Business Requirements
+BR-01: Resume Analysis
+System must read resume and extract text.
+BR-02: Job Description Processing
+System must accept job description via:
+Manual paste
+URL scraping (optional)
+BR-03: Keyword Matching
+System must:
+Extract keywords from JD
+Compare with resume
+Calculate match %
+BR-04: Resume Customization
+System must rewrite resume summary using AI.
+BR-05: Cover Letter Generation
+System must generate customized cover letter.
+BR-06: Auto Apply
+System must apply automatically only when:
+Easy Apply button exists
+No captcha detected
+BR-07: Application Tracking
+System must log:
+Company
+Role
+Date
+Status
+BR-08: Error Handling
+System must retry failed API calls up to 3 times.
+
+7️⃣ Success Metrics (KPIs)
+KPI
+Target
+Resume Match Accuracy
+≥ 80% keyword relevance
+Time Saved
+≥ 60% reduction
+Application Volume
+≥ 20/day
+System Stability
+99% success rate
+
+
+8️⃣ Assumptions
+User provides clean .docx resume
+Job portals do not block automation
+OpenAI API is available
+9️⃣ Risks & Mitigation
+Risk
+Mitigation
+Automation blocked
+Manual fallback mode
+API downtime
+Retry mechanism
+Portal UI changes
+Modular Selenium scripts
+Legal compliance
+Terms review before deployment
+
+
