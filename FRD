@@ -1,0 +1,143 @@
+FUNCTIONAL REQUIREMENT DOCUMENT (FRD)
+
+1️⃣ System Overview
+A Python-based web application using:
+Flask (Web UI)
+Selenium (Automation)
+OpenAI API (AI text generation)
+Excel (Tracking)
+
+2️⃣ Functional Modules
+
+🔹 Module 1: Resume Parser
+FR-01
+System shall upload and read .docx resume.
+FR-02
+System shall extract complete textual content.
+FR-03
+System shall validate file type.
+
+🔹 Module 2: Job Description Analyzer
+FR-04
+System shall accept JD via text input.
+FR-05
+System shall extract keywords using NLP/Regex.
+FR-06
+System shall remove stopwords.
+
+🔹 Module 3: Keyword Matching Engine
+FR-07
+System shall calculate keyword match percentage.
+Formula:
+Match % = (Matched Keywords / Total JD Keywords) * 100
+
+FR-08
+System shall display match score on UI.
+
+🔹 Module 4: Resume Customizer (AI)
+FR-09
+System shall send resume summary + JD to AI API.
+FR-10
+System shall rewrite summary professionally.
+FR-11
+System shall handle API failure with retry (3 attempts).
+
+🔹 Module 5: Cover Letter Generator
+FR-12
+System shall generate cover letter based on:
+Role
+Company
+Skills
+FR-13
+System shall allow download in .docx format.
+
+🔹 Module 6: Auto Apply Engine
+FR-14
+System shall login to selected portal.
+FR-15
+System shall search jobs based on keywords.
+FR-16
+System shall detect "Easy Apply".
+FR-17
+System shall auto-fill application form.
+FR-18
+System shall skip jobs with captcha.
+
+🔹 Module 7: Application Tracker
+FR-19
+System shall create Excel file if not exists.
+FR-20
+System shall append job details.
+Columns:
+| Company | Role | Platform | Status | Date |
+
+🔹 Module 8: Error Handling
+FR-21
+System shall log errors in log file.
+FR-22
+System shall retry API failures.
+FR-23
+System shall handle file read errors.
+
+3️⃣ Non-Functional Requirements
+Category
+Requirement
+Performance
+Response time < 5 seconds
+Security
+API key stored in .env
+Usability
+Simple 1-page UI
+Scalability
+Modular design
+Reliability
+99% uptime (local execution)
+Logging
+All actions logged
+
+
+4️⃣ UI Requirements
+Home Page
+Resume Upload
+JD Textbox
+Analyze Button
+Results Page
+Match %
+Download Resume
+Download Cover Letter
+Apply Button
+
+5️⃣ Data Design
+Excel Schema
+Field
+Type
+Company
+String
+Role
+String
+Platform
+String
+Status
+String
+Date
+DateTime
+
+
+6️⃣ System Workflow Diagram (Textual)
+User → Upload Resume → Paste JD → Analyze →
+Keyword Match → AI Customization →
+Generate Cover Letter →
+Auto Apply →
+Track in Excel →
+Show Results
+
+
+7️⃣ Future Enhancements (FRD Extension)
+Multi-user login
+Database instead of Excel
+Dashboard analytics
+ATS scoring system
+Interview question prediction
+Cloud deployment (AWS)
+Subscription payment model
+
